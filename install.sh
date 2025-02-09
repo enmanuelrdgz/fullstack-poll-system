@@ -7,7 +7,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-git clone -b develop https://github.com/enmanuelrdgz/quickpolls-client.git
+git clone -b test https://github.com/enmanuelrdgz/quickpolls-client.git
 if [ $? -ne 0 ]; then
   echo "Error: No se pudo clonar quickpolls-client."
   exit 1
