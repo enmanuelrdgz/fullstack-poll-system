@@ -5,12 +5,8 @@ services:
       context: ./quickpolls-client
     ports:
       - "3000:3000"
-    environment:
-      NEXT_PUBLIC_BACKEND_URL: http://backend:8080
     depends_on:
       - backend
-    networks:
-      - quickpolls-network
 
   backend:
     image: quickpolls-core-2.0.0

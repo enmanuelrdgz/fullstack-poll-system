@@ -13,8 +13,15 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Crear una red de docker
-docker network create quickpolls-network
+# Nombre de la red docker
+RED_NOMBRE="quickpolls-network"
+
+# Verificar si la red existe
+if docker network ls | grep -q $RED_NOMBRE; then
+  echo "La red '$RED_NOMBRE' ya existe."
+else
+  docker network create quickpolls-network
+fi
 
 # Construir y levantar los contenedores
 docker-compose up --build
