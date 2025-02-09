@@ -1,4 +1,4 @@
-# quickpolls-install
+# Installation
 
 1. Run the install script  
 ```bash
