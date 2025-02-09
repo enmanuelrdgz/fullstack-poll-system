@@ -13,6 +13,9 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# Crear una red de docker
+docker network create quickpolls-network
+
 # Construir y levantar los contenedores
 docker-compose up --build
 if [ $? -ne 0 ]; then
