@@ -1,0 +1,39 @@
+services:
+  frontend:
+    image: quickpolls-client-2.0.0
+    build:
+      context: ./quickpolls-client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    image: quickpolls-core-2.0.0
+    build:
+      context: ./quickpolls-core
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - db
+    networks:
+      - quickpolls-network
+  
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432"
+    networks:
+      - quickpolls-network
+
+networks:
+  quickpolls-network:
+    driver: bridge
