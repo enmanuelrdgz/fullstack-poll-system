@@ -10,7 +10,7 @@ This application is divided into 3 nodes, each of them being an stand-alone appl
 
 
 ## Deployment Diagram
-![Deployment Diagram](/docs/deployment-diagram.jpg)
+![Deployment Diagram](/images/deployment-diagram.jpg)
 
 
 # Prerequisites
