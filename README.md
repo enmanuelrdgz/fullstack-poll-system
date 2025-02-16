@@ -1,10 +1,10 @@
-# QuickPolls
+# mypolls-installation
 
-Quickpolls is a simple poll system with authentication that allows users to create and participate in polls.  
+MyPolls is a simple poll system that allows users to create and participate in polls.  
 This application is divided into 3 nodes, each of them being an stand-alone application running in its own container:
 
-- [**quickpolls-client:**](https://github.com/enmanuelrdgz/quickpolls-client)  A Next.js application, this is the frontend of the system.
-- [**quickpolls-core:**](https://github.com/enmanuelrdgz/quickpolls-core)  A SpringBoot application. This is an API for the frontend to fetch data from the database.
+- [**mypolls-frontend:**](https://github.com/enmanuelrdgz/mypolls-frontend)  A Next.js application, this is the frontend of the system.
+- [**mypolls-backend:**](https://github.com/enmanuelrdgz/mypolls-backend)  A SpringBoot application. This is an API for the frontend to fetch data from the database.
 - **PostgreSQL:** A RDBMS for data persistence.
 
 
