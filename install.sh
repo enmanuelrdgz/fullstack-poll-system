@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Clonar los repositorios
-git clone https://github.com/enmanuelrdgz/quickpolls-core.git
+git clone https://github.com/enmanuelrdgz/mypolls-backend.git
 if [ $? -ne 0 ]; then
   echo "Error: No se pudo clonar quickpolls-core."
   exit 1
 fi
 
-git clone https://github.com/enmanuelrdgz/quickpolls-client.git
+git clone https://github.com/enmanuelrdgz/mypolls-frontend.git
 if [ $? -ne 0 ]; then
   echo "Error: No se pudo clonar quickpolls-client."
   exit 1
