@@ -5,15 +5,14 @@ This is a fullstack project I made to showcase my skills and knowledge in progra
 
 ## Related Repositories
 
-- [**mypolls-frontend:**](https://github.com/enmanuelrdgz/mypolls-frontend)  A Next.js application, this is the frontend of the system.
-- [**mypolls-backend:**](https://github.com/enmanuelrdgz/mypolls-backend)  A SpringBoot application. This is an API for the frontend to fetch data from the database.
+- [**mypolls-frontend**](https://github.com/enmanuelrdgz/mypolls-frontend)  
+- [**mypolls-backend**](https://github.com/enmanuelrdgz/mypolls-backend)  
 
 ## Description
 
-* Distributed system that allows users to **authenticate**, **create** and **participate** in polls.
-* Made up of **3 components** (REST API, Web Application and RDBMS) running as independent procecess.
-* Each component can be **deployed in a different host**, as well as in the **same host**.
-* Each component **runs inside a docker container**.
+* Simple distributed system designed for secure user authentication and real-time poll management, featuring:
+* Flexible deployment options (multi-host or single-host configurations)
+* Each component **runs inside a docker container**.  
 * Main thecnologies:  
     * **REST API**: Java and SpringBoot
     * **Web Application**: TypeScript, Node.js, React and Next.js
@@ -24,9 +23,13 @@ This is a fullstack project I made to showcase my skills and knowledge in progra
     * **Security**: JWT, React Context hook (for mannaging authentication context in the client)
     * **Markup and Styling**: HTML and CSS (with no framworks or libraries)
 
-## Arquitecture
+## System Arquitecture
 
-![Deployment Diagram](/images/deployment-diagram.jpg)
+- **REST API** (mypolls-backend): Java/SpringBoot application with core business logic that uses Hibernate ORM and JWT security
+- **Web Client** (mypolls-frontend): React/Next.js application with authentication context management via React Hooks  
+- **Database** (PostgreSQL): Relational data storage with ACID compliance
+
+![Deployment Diagram](/images/architecture.png)
 
 
 ## Prerrequisites
