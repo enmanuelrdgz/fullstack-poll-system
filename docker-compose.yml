@@ -1,17 +1,17 @@
 services:
   frontend-server:
-    image: quickpolls-client-2.0.0
+    image: frontend-app
     build:
-      context: ./quickpolls-client
+      context: ./frontend-app
     ports:
       - "3000:3000"
     depends_on:
       - backend
 
   backend-server:
-    image: quickpolls-core-2.0.0
+    image: backend-app
     build:
-      context: ./quickpolls-core
+      context: ./backend-app
     ports:
       - "8080:8080"
     environment:

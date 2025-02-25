@@ -23,29 +23,25 @@ This system is composed of 3 Docker containers running on the same host, interco
 
 * **Backend Server**: The Backend Server container houses the backend application, which handles the core business logic and performs CRUD operations on the database. It acts as the central hub for processing requests from the Frontend Server and managing data interactions with the Database Server.
 
-* **Database Server**: This container runs a PostgreSQL instance, serving as the system's persistent data storage. 
+* **Database Server**: This container hosts a PostgreSQL instance, acting as the primary "persistent" data storage for the system. However, this container is not configured with a volume mapped to your host machine. As a result, any data stored within the container will be lost when the container is stopped.
 
-<img src="./docs/architecture.png" alt="Descripción de la imagen" width="500"/>
-
+<div style="  text-align: center; padding: 10px;">
+<img src="./docs/architecture.png" alt="Descripción de la imagen" style="width: 500px; margin-left: auto; margin-right: auto"/>
+</div>
 
 ## Installation 📦
-
-You can build and deploy this system by cloning this repo and then running the install.sh script. It will download the sources of the backend and frontend, and then run the docker-compose.yml wich is going to build the images for the backend, frontend and the database and then run those images. It will try to use port 3000 for the frontend by default, and in case it is not available, it will ask you to enter other port number. 
-
 
 1. **Clone this repository**:  
     Start by cloning this repository to your local machine.
 
-
     ```bash
-        git clone https://github.com/enmanuelrdgz/mypolls-installation.git
-        cd mypolls-installation
+        git clone https://github.com/enmanuelrdgz/fullstack-poll-system.git
+        cd fullstack-poll-system
     ```
 2. **Run the installation script**:  
-    Execute the install.sh script provided in the repository. This script automates the setup process by performing the following tasks:
+    Execute the **install.sh** script wich automates the setup process by performing the following tasks:
     * Downloads the source code for both the backend and frontend applications.
-    * Uses the docker-compose.yml file to build Docker images for the backend, frontend, and database components.
-    * Deploys the system by running the built Docker images.
+    * Uses the **docker-compose.yml** file to build and run Docker images for the backend, frontend, and database components.
 
      ```bash
         sudo sh install.sh
