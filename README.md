@@ -1,52 +1,51 @@
-# About this repository
+# Fullstack Poll System 🚀
 
-This is a fullstack project I made to showcase my skills and knowledge in programming, networking and software architecture.  
-
+A simple poll system to showcase my skills and knowledge with different technologies.
 
 ## Related Repositories
 
-- [**mypolls-frontend**](https://github.com/enmanuelrdgz/mypolls-frontend)  
-- [**mypolls-backend**](https://github.com/enmanuelrdgz/mypolls-backend)  
+* [frontend-app](https://github.com/enmanuelrdgz/frontend-app)  
+* [backend-app](https://github.com/enmanuelrdgz/backend-app)  
 
-## Description
+## Features 🌟
 
-* Simple distributed system designed for secure user authentication and real-time poll management, featuring:
-* Flexible deployment options (multi-host or single-host configurations)
-* Each component **runs inside a docker container**.  
-* Main thecnologies:  
-    * **REST API**: Java and SpringBoot
-    * **Web Application**: TypeScript, Node.js, React and Next.js
-    * **Database**: PostgreSQL
-* Other thecnologies/libraries:
-    * **Containers**: Docker and Docker Compose
-    * **ORM**: Hibernate
-    * **Security**: JWT, React Context hook (for mannaging authentication context in the client)
-    * **Markup and Styling**: HTML and CSS (with no framworks or libraries)
+This system allows users to:  
 
-## System Arquitecture
+* Authenticate with username and password
+* Create polls with a title and 2 or more options
+* Cast a vote on other users' polls
 
-- **REST API** (mypolls-backend): Java/SpringBoot application with core business logic that uses Hibernate ORM and JWT security
-- **Web Client** (mypolls-frontend): React/Next.js application with authentication context management via React Hooks  
-- **Database** (PostgreSQL): Relational data storage with ACID compliance
+## Architecture
 
-![Deployment Diagram](/images/architecture.png)
+This system is composed of 3 Docker containers running on the same host, interconnected via a Docker Bridge Network  
+
+* **Frontend Server**: This container hosts the frontend application, which is responsible for fetching poll data from the Backend Server and presenting it to users in an intuitive interface. When a user performs actions such as authentication or poll creation, the data is first sent to the Frontend Server, which then relays it to the Backend Server
+
+* **Backend Server**: The Backend Server container houses the backend application, which handles the core business logic and performs CRUD operations on the database. It acts as the central hub for processing requests from the Frontend Server and managing data interactions with the Database Server.
+
+* **Database Server**: This container runs a PostgreSQL instance, serving as the system's persistent data storage. 
+
+<img src="./docs/architecture.png" alt="Descripción de la imagen" width="500"/>
 
 
-## Prerrequisites
+## Installation 📦
 
-Before running this project ensure you have installed the following:  
+You can build and deploy this system by cloning this repo and then running the install.sh script. It will download the sources of the backend and frontend, and then run the docker-compose.yml wich is going to build the images for the backend, frontend and the database and then run those images. It will try to use port 3000 for the frontend by default, and in case it is not available, it will ask you to enter other port number. 
 
-* Docker
-* Docker Compose
 
-## Installation
+1. **Clone this repository**:  
+    Start by cloning this repository to your local machine.
 
-1. Clone this repository:
+
     ```bash
         git clone https://github.com/enmanuelrdgz/mypolls-installation.git
         cd mypolls-installation
     ```
-2. Run the **install** script as a **superuser**:
+2. **Run the installation script**:  
+    Execute the install.sh script provided in the repository. This script automates the setup process by performing the following tasks:
+    * Downloads the source code for both the backend and frontend applications.
+    * Uses the docker-compose.yml file to build Docker images for the backend, frontend, and database components.
+    * Deploys the system by running the built Docker images.
 
      ```bash
         sudo sh install.sh
