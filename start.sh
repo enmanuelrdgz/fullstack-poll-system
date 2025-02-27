@@ -23,7 +23,7 @@ else
 fi
 
 # Construir las imagenes y levantar los contenedores
-docker-compose up --build
+docker-compose up --build &
 if [ $? -ne 0 ]; then
   echo "No se pudo levantar las imagenes con docker-compose."
   exit 1
