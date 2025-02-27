@@ -17,7 +17,7 @@ services:
     build:
       context: ./backend-app
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database-service:5432/${DB_NAME}
       SPRING_DATASOURCE_USERNAME: ${DB_USER}
       SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
     depends_on:
