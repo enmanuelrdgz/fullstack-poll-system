@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Clonar el repositorio del backend
-if [-d ./backend-app]; then 
+if [ -d ./backend-app ]; then 
   echo "El directorio \"backend-app\" ya existe."
 else
   git clone https://github.com/enmanuelrdgz/backend-app.git
@@ -12,7 +12,7 @@ else
 fi
 
 # Clonar el repositorio del frontend
-if [-d ./frontend-app]; then 
+if [ -d ./frontend-app ]; then 
   echo "El directorio \"frontend-app\" ya existe."
 else
   git clone https://github.com/enmanuelrdgz/frontend-app.git
