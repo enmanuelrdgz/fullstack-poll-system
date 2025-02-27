@@ -1,39 +1,37 @@
 services:
-  frontend-server:
+  frontend-service:
     image: frontend-app
     build:
       context: ./frontend-app
     ports:
-      - "3000:3000"
+      - "3000:${PORT}"
     depends_on:
-      - backend
+      - backend-service
+    networks:
+      - ${NETWORK_NAME}
 
-  backend-server:
+  backend-service:
     image: backend-app
     build:
       context: ./backend-app
-    ports:
-      - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
       SPRING_DATASOURCE_USERNAME: ${DB_USER}
       SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
     depends_on:
-      - db
+      - database-service
     networks:
-      - quickpolls-network
+      - ${NETWORK_NAME}
   
-  database-server:
+  database-service:
     image: postgres:13
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
-    ports:
-      - "5432:5432"
     networks:
-      - quickpolls-network
+      - ${NETWORK_NAME}
 
 networks:
-  quickpolls-network:
+  ${NETWORK_NAME}:
     driver: bridge
