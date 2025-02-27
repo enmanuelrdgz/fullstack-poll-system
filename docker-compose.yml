@@ -8,7 +8,7 @@ services:
     depends_on:
       - backend-service
     networks:
-      - ${NETWORK_NAME}
+      - poll-system-network
 
   backend-service:
     image: backend-app
@@ -21,7 +21,7 @@ services:
     depends_on:
       - database-service
     networks:
-      - ${NETWORK_NAME}
+      - poll-system-network
   
   database-service:
     image: postgres:13
@@ -30,8 +30,8 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
     networks:
-      - ${NETWORK_NAME}
+      - poll-system-network
 
 networks:
-  ${NETWORK_NAME}:
+  poll-system-network:
     driver: bridge
