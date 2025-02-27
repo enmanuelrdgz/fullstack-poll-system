@@ -1,6 +1,7 @@
 services:
   frontend-service:
     image: frontend-app
+    container_name: frontend
     build:
       context: ./frontend-app
     ports:
@@ -12,6 +13,7 @@ services:
 
   backend-service:
     image: backend-app
+    container_name: backend
     build:
       context: ./backend-app
     environment:
@@ -25,6 +27,7 @@ services:
   
   database-service:
     image: postgres:13
+    container_name: database
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -34,4 +37,7 @@ services:
 
 networks:
   poll-system-network:
+    name: poll-system-network
     driver: bridge
+    
+    
