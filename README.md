@@ -1,4 +1,4 @@
-# Fullstack Poll System 🚀
+# Project 1: Poll System 🚀
 
 A simple poll system to showcase my skills and knowledge with different technologies.
 
@@ -9,11 +9,9 @@ A simple poll system to showcase my skills and knowledge with different technolo
 
 ## Features 🌟
 
-This system allows users to:  
-
-* Authenticate with username and password
-* Create polls with a title and 2 or more options
-* Cast a vote on other users' polls
+* JWT-based authentication
+* Data persistence using PostgreSQL
+* Deployment with Docker Compose
 
 ## Architecture
 
